@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chatbot</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #f2f7ff, #e0ecff);
+      margin: 0;
+      padding: 0 20px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      height: 100vh;
+    }
+
+    #chat-box {
+      border: none;
+      height: 400px;
+      width: 368px;
+      overflow-y: auto;
+      padding: 16px;
+      background: #fdfdfd;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+      border-radius: 0 0 12px 12px;
+      margin-bottom: 10px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    body > h2 {
+      display: none; /* Hide original heading */
+    }
+
+    /* Container to mimic chat window style */
+    .chat-container {
+      width: 400px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .chat-header {
+      padding: 16px;
+      background: #0073aa;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      text-align: center;
+      border-radius: 12px 12px 0 0;
+      user-select: none;
+    }
+
+    /* Message styles */
+    .user {
+      text-align: right;
+      color: #00549f;
+      margin-bottom: 12px;
+      word-wrap: break-word;
+    }
+
+    .bot {
+      text-align: left;
+      color: #222;
+      margin-bottom: 12px;
+      word-wrap: break-word;
+    }
+
+    /* Buttons inside chat-box */
+    #chat-box button {
+      background: #e6f0ff;
+      color: #00549f;
+      border: none;
+      border-radius: 20px;
+      padding: 8px 14px;
+      margin: 4px 4px 8px 0;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background 0.2s;
+      align-self: flex-start;
+    }
+
+    #chat-box button:hover {
+      background: #d0e4ff;
+    }
+
+    /* Input form styles */
+    #chat-form {
+      display: flex;
+      border-top: 1px solid #ddd;
+      border-radius: 0 0 12px 12px;
+      background: #fff;
+      padding: 10px 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    #user-input {
+      flex: 1;
+      padding: 12px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      outline: none;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    #chat-form button {
+      background: #0073aa;
+      border: none;
+      color: white;
+      padding: 0 20px;
+      margin-left: 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background 0.3s;
+    }
+
+    #chat-form button:hover {
+      background: #005a88;
+    }
+  </style>
+</head>
+<body>
+  <div class="chat-container">
+    <div class="chat-header">ChatBot</div>
+    <div id="chat-box"></div>
+    <form id="chat-form">
+      <input type="text" id="user-input" placeholder="Type a message..." required />
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+  <script src="chatbot.js"></script>
+</body>
+</html>
